@@ -1,0 +1,5 @@
+.rl-side{right:8px!important;gap:18px!important}
+.rl-ab.fire svg,.rl-ab.chat svg,.rl-ab.star svg,.rl-ab.rep svg,.rl-ab.rep svg.rpf-svg{width:40px!important;height:40px!important}
+.rl-ab.fire b,.rl-ab.chat b,.rl-ab.rep b,.rl-ab.star b{font:600 13px/1.1 'Inter','Cairo',-apple-system,system-ui,sans-serif!important}
+.rl-ab.star b{display:block!important}
+.rl-ab{gap:3px!important}

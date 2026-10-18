@@ -1,0 +1,25 @@
+/* reels side buttons = same look & states as the home feed buttons */
+.rl-ab.fire,.rl-ab.chat,.rl-ab.rep,.rl-ab.star{color:#8895aa!important;gap:5px}
+.rl-ab.fire b,.rl-ab.chat b,.rl-ab.rep b,.rl-ab.star b{color:inherit!important;font:400 15px/1.1 'Cairo','Inter',system-ui,sans-serif!important;text-shadow:0 1px 5px rgba(0,0,0,.7)}
+.rl-ab.fire svg,.rl-ab.chat svg,.rl-ab.rep svg,.rl-ab.star svg,.rl-ab.rep svg.rpf-svg{stroke:none!important;overflow:visible!important;filter:drop-shadow(0 1px 4px rgba(0,0,0,.6))!important;animation:none!important;margin:0!important;transform:none;will-change:auto}
+.rl-ab.fire svg{width:25px!important;height:25px!important;fill:none!important}
+.rl-ab.fire svg path:nth-child(1){fill:currentColor!important}
+.rl-ab.fire svg path:nth-child(2){fill:#02060a!important}
+.rl-ab.chat svg{width:26px!important;height:26px!important}
+.rl-ab.chat svg path{fill:none!important;stroke:currentColor!important;stroke-width:4!important}
+.rl-ab.chat svg circle{fill:currentColor!important}
+.rl-ab.star svg{width:25px!important;height:25px!important}
+.rl-ab.star svg path{fill:none!important;stroke:currentColor!important;stroke-width:4!important}
+.rl-ab.star svg path:nth-child(2){display:none}
+.rl-ab.star b{display:none}
+.rl-ab.rep svg,.rl-ab.rep svg.rpf-svg{width:27px!important;height:27px!important}
+.rl-ab.rep svg g{display:none!important}
+.rl-ab.rep svg>use{fill:currentColor!important;stroke:none!important}
+.rl-ab.fire.on,.rl-ab.fire.on b{color:#fa378a!important}
+.rl-ab.star.on{color:#1d9bf0!important}
+.rl-ab.star.on svg path:nth-child(1){fill:currentColor!important}
+.rl-ab.rep.on,.rl-ab.rep.on b{color:#e8eefc!important}
+.rl-ab.fire.on svg,.rl-ab.star.on svg{animation:rlPop .45s!important}
+.rl-ab.anim svg,.rl-ab.anim b{animation:none!important}
+.rl-ab.anim.fire.on svg,.rl-ab.anim.star.on svg{animation:rlPop .45s!important}
+.rl-side{gap:20px!important}

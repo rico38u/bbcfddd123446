@@ -1,0 +1,49 @@
+/* side buttons — TikTok size */
+.rl-side{right:8px!important;gap:13px!important}
+.rl-ab svg{width:38px!important;height:38px!important}
+.rl-ab b{font-size:12px!important;font-weight:600!important;color:#fff!important}
+.rl-ab.more svg{width:30px!important;height:30px!important;fill:#fff;stroke:none;filter:drop-shadow(0 1px 4px rgba(0,0,0,.6))}
+/* progress */
+.rl-pg{position:absolute;left:12px;right:12px;bottom:calc(env(safe-area-inset-bottom,0px) + 84px);height:16px;z-index:6;display:flex;align-items:center;touch-action:none}
+.rl-pg:before{content:"";position:absolute;left:0;right:0;height:3px;border-radius:3px;background:rgba(255,255,255,.28);transition:height .15s}
+.rl-pg i{position:absolute;left:0;height:3px;width:0;border-radius:3px;background:#fff;transition:height .15s}
+.rl-pg:active:before,.rl-pg:active i{height:6px}
+.rl-cm .gr{width:38px;height:4px;border-radius:4px;background:rgba(255,255,255,.3);margin:0 auto 12px}
+/* comments — dark glass */
+.rl-cm{background:rgba(18,18,26,.8)!important;backdrop-filter:blur(34px) saturate(1.7);-webkit-backdrop-filter:blur(34px) saturate(1.7);color:#fff!important;border:1px solid rgba(255,255,255,.14);border-bottom:0;border-radius:28px 28px 0 0!important;height:74dvh!important;padding-top:8px}
+.rl-cm .gr{margin:4px auto 0;flex:none}
+.rl-cm-head{height:auto!important;flex-direction:column;align-items:stretch!important;padding:8px 16px 4px!important;gap:8px}
+.rl-cm-count{color:#fff!important;font-size:16px!important;justify-content:center}.rl-cm-count svg{stroke:#fff!important}
+.rl-cm-x{top:12px!important;background:rgba(255,255,255,.1)!important;border-radius:50%;color:#fff!important}
+.rl-cm-sort{display:flex;gap:6px;justify-content:center}
+.rl-cm-sort button{padding:6px 16px;border-radius:20px;border:0;background:rgba(255,255,255,.09);color:rgba(255,255,255,.75);font:600 13px 'Cairo',sans-serif;cursor:pointer}
+.rl-cm-sort button.on{background:#fff;color:#111}
+.rl-c{padding:12px;border-radius:18px;background:rgba(255,255,255,.06);margin-bottom:10px!important}
+.rl-c.rep{background:rgba(255,255,255,.04)}
+.rl-c-n{color:rgba(255,255,255,.65)!important;font-weight:700!important}
+.rl-c-t{color:#fff!important;font-size:15.5px!important}
+.rl-c-a{color:rgba(255,255,255,.55)!important;font-size:13px!important;gap:14px!important;flex-wrap:wrap}
+.rl-c-a svg{width:19px!important;height:19px!important}
+.rl-c-a button.on.dl,.rl-c-a button.on.dl svg{color:#fff;fill:#fff}
+.rl-c-vr{color:rgba(255,255,255,.7)!important}.rl-c-vr::after{background:rgba(255,255,255,.14)!important}
+.rl-c .by{font-style:normal;font-size:10.5px;background:linear-gradient(90deg,#ff2d55,#ff7a45);color:#fff;border-radius:8px;padding:1px 7px;margin-inline-start:4px}
+.rl-c .pin{color:#ffd166;font-size:12px}
+.rl-cm-none,.rl-cm-off{color:rgba(255,255,255,.55)!important}
+.rl-c-av[data-pf],.rl-av[data-pf],.rl-un .n[data-pf]{cursor:pointer;-webkit-tap-highlight-color:transparent}
+/* كل التعليقات والردود تُحاذى لليمين */
+.rl-cm-list,.rl-c,.rl-c-b,.rl-c-n,.rl-c-t,.rl-c-a,.rl-c-vr{direction:rtl!important;text-align:right!important}
+.rl-c-n,.rl-c-t{unicode-bidi:isolate!important;justify-content:flex-start}
+.rl-c-a{justify-content:flex-start}
+.rl-c-vr{justify-content:flex-start}
+.rl-c.rep{margin:12px 0 0 0!important}
+.crow,.crow b,.crow span{direction:rtl;text-align:right}
+.rl-cm-quick{flex:none;display:flex;gap:6px;justify-content:space-around;padding:6px 14px 0;direction:ltr}
+.rl-cm-quick button{background:rgba(255,255,255,.08);border:0;border-radius:50%;width:38px;height:38px;font-size:20px;cursor:pointer}
+.rl-cm-rep{flex:none;display:none;align-items:center;justify-content:space-between;margin:8px 14px 0;padding:6px 12px;border-radius:12px;background:rgba(255,255,255,.1);font:600 13px 'Cairo',sans-serif;color:#fff}
+.rl-cm-rep.show{display:flex}.rl-cm-rep button{background:none;border:0;color:#fff;font-size:16px;cursor:pointer}
+.rl-cm-emo{border-top-color:rgba(255,255,255,.12)!important}
+.rl-cm-prev{color:#fff!important}.rl-cm-prev button{background:rgba(255,255,255,.18)!important;color:#fff!important}
+.rl-cm-bar{border-top:0!important}
+.rl-cm-pill{background:rgba(255,255,255,.12)!important;backdrop-filter:blur(10px)}
+.rl-cm-pill input,.rl-cm-pill .ic{color:#fff!important}.rl-cm-pill input::placeholder{color:rgba(255,255,255,.5)!important}
+.rl-cm-me{border:2px solid rgba(255,255,255,.25)}

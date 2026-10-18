@@ -1,0 +1,36 @@
+/* ===== MESSAGES PERF — compositor-only animation, zero per-frame filters, cheap glass ===== */
+/* 1) panels: GPU layers, no hit-testing / painting while hidden, smooth easing */
+.mg-p{will-change:transform,opacity;backface-visibility:hidden;-webkit-backface-visibility:hidden;overscroll-behavior:contain;-webkit-overflow-scrolling:touch;touch-action:pan-y;transition:transform .38s cubic-bezier(.22,.9,.24,1),opacity .26s linear,visibility 0s linear 0s}
+.mg-p:not(.on){visibility:hidden;transition:transform .38s cubic-bezier(.22,.9,.24,1),opacity .26s linear,visibility 0s linear .4s}
+.mg-p:not(.on) .mg-bgx *{animation-play-state:paused!important}
+.mg-ms{overscroll-behavior:contain;-webkit-overflow-scrolling:touch;touch-action:pan-y}
+.mg-r{contain:layout;touch-action:manipulation}
+.navwrap,body.mg-chat .navwrap{transition:transform .3s cubic-bezier(.22,.9,.24,1)}
+
+/* 2) backgrounds: static layers are not promoted, animated ones stay on the compositor */
+.mg-bgx i{backface-visibility:hidden;-webkit-backface-visibility:hidden}
+.mg-bgx .vg,.mg-bgx .dm,.mg-bgx .gr,.mg-bgx .dc,.mg-bgx .ns,.mg-bgx .mt,.mg-bgx .mt2,.mg-bgx .hl,.mg-bgx .sl,.mg-bgx .gw{will-change:auto}
+.msg.mg-busy .mg-bgx *{animation-play-state:paused!important}
+
+/* 3) NO blur() filters on animated layers: soft edges come from masks (rasterised once) */
+.mg-bgx .r,.mg-bgx[data-t] .r{filter:none!important;-webkit-mask-image:linear-gradient(180deg,transparent,#000 34%,#000 66%,transparent);mask-image:linear-gradient(180deg,transparent,#000 34%,#000 66%,transparent)}
+.mg-bgx[data-t=northern] .cu,.mg-bgx[data-t=ocean] .ry,.mg-bgx[data-t=galaxy] .gl,.mg-bgx[data-t=galaxy] .gl2,.mg-bgx[data-t=storm] .cd,.mg-bgx[data-t=sunset] .cl{filter:none!important}
+.mg-bgx[data-t=sunset] .cl{-webkit-mask-image:linear-gradient(180deg,transparent,#000 45%,#000 55%,transparent);mask-image:linear-gradient(180deg,transparent,#000 45%,#000 55%,transparent)}
+.mg-bgx[data-t=holo] .ho{filter:none!important;animation-name:mgk-spin;-webkit-mask-image:radial-gradient(circle,#000 30%,transparent 68%);mask-image:radial-gradient(circle,#000 30%,transparent 68%)}
+/* cyber grid: animate transform (compositor) instead of background-position (repaint every frame) */
+@keyframes mgk-grid2{from{transform:rotateX(68deg) translate3d(0,0,0)}to{transform:rotateX(68deg) translate3d(0,48px,0)}}
+.mg-bgx[data-t=cyber] .gx{top:-48px;height:948px;will-change:transform;animation:mgk-grid2 1.4s linear infinite}
+
+/* 4) cheap glass: smaller blur radius, no saturate pass, no blur on every chat bubble */
+.mg-g{-webkit-backdrop-filter:blur(12px);backdrop-filter:blur(12px)}
+.mg-b.th p{-webkit-backdrop-filter:none;backdrop-filter:none}
+.mg-sp{-webkit-backdrop-filter:blur(16px);backdrop-filter:blur(16px)}
+.mg-cmo{-webkit-backdrop-filter:none;backdrop-filter:none}
+body.mg-lite .mg-g,body.mg-lite .mg-sp{-webkit-backdrop-filter:none;backdrop-filter:none;background:linear-gradient(160deg,rgba(56,66,170,.62),rgba(36,36,120,.5))}
+body.mg-lite .mg-bgx .o3,body.mg-lite .mg-bgx .o4,body.mg-lite .mg-bgx .r,body.mg-lite .mg-bgx .sh,body.mg-lite .mg-bgx .sw,body.mg-lite .mg-bgx .gr{display:none}
+
+/* 5) settings previews: only the selected one animates; the rest are static, lazily painted */
+.mgs-card:not(.sel) .mgp .mg-bgx *{animation:none!important;will-change:auto!important}
+.mgs-card{content-visibility:auto;contain-intrinsic-size:auto 190px;transition:transform .16s cubic-bezier(.22,.9,.24,1)}
+.mgs-card .mgp .mg-bgx{contain:strict}
+.tp-slider input,.mgs-seg button{touch-action:manipulation}

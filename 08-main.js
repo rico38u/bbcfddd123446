@@ -1,0 +1,1 @@
+document.addEventListener('click',function(e){var b=e.target.closest&&e.target.closest('.rl-ab');if(!b)return;b.classList.remove('anim');void b.offsetWidth;b.classList.add('anim');clearTimeout(b._at);b._at=setTimeout(function(){b.classList.remove('anim')},900)},true);
